@@ -1,12 +1,12 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-SNAPSHOT
-# Date created:         Wed Jul 07 11:38:21 IST 2021
+# Date created:         Wed Jul 07 16:11:59 IST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: sample
+  home: Test-Me
 spec:
 - folderVariables:
   - type: xlrelease.StringVariable
@@ -32,6 +32,9 @@ spec:
       type: xlrelease.Task
     - name: Another Dummy task
       type: xlrelease.Task
+    - name: Just Print
+      type: xlrelease.ScriptTask
+      script: "print ${folder.APPNAME}"
   - phase: Second Test Phase
     description: Sample Phase
     color: '#0079BC'
@@ -44,7 +47,7 @@ spec:
   releaseFolder: Another Sample
   gitRepository: Another repo
   branch: main
-  commitId: 5ced5c5cd2cd903a14d78f39b99798015dcbdd94
+  commitId: 91485ef999c559e80696d86cfb1343ac4b6c109b
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
