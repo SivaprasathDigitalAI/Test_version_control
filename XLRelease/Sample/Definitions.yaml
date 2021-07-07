@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-SNAPSHOT
-# Date created:         Wed Jul 07 11:03:01 IST 2021
+# Date created:         Wed Jul 07 11:17:43 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -35,6 +35,15 @@ spec:
     description: Sample Phase
     color: '#0079BC'
   riskProfile: Default risk profile
+- name: Git Triggers
+  type: git.Poll
+  description: Git trigger to Execute upon new commits
+  releaseTitle: "Triggered-Release-${commitId}"
+  template: Sample-Test
+  releaseFolder: sample
+  gitRepository: Another repo
+  branch: main
+  commitId: c85bb728759fd2650ce275adeccb266a2e601994
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
