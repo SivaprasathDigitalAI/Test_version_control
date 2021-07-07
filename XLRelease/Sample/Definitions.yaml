@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-SNAPSHOT
-# Date created:         Wed Jul 07 11:27:01 IST 2021
+# Date created:         Wed Jul 07 11:38:21 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -24,6 +24,7 @@ spec:
     type: xlrelease.GitHubOAuth2Token
 - template: Sample-Test
   scheduledStartDate: 2021-07-06T09:00:00+05:30
+  dueDate: 2021-07-06T10:00:00+05:30
   phases:
   - phase: Sample Space
     tasks:
@@ -40,10 +41,10 @@ spec:
   description: Git trigger to Execute upon new commits
   releaseTitle: "Triggered-Release-${commitId}"
   template: Sample-Test
-  releaseFolder: Samples & Tutorials
+  releaseFolder: Another Sample
   gitRepository: Another repo
   branch: main
-  commitId: c85bb728759fd2650ce275adeccb266a2e601994
+  commitId: 5ced5c5cd2cd903a14d78f39b99798015dcbdd94
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
