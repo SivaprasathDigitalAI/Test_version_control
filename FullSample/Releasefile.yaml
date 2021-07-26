@@ -1,48 +1,19 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Jul 22 18:18:21 IST 2021
+# Date created:         Mon Jul 26 16:55:14 IST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: Full-Sample
+  home: Test-All
 spec:
-- name: Sample-Test2
-  type: git.Repository
-  url: https://github.com/SivaprasathDigitalAI/sample-test
-  username: SivaprasathDigitalAI
-  password: !value "git_Repository_Sample_Test2_password"
-- name: Sample-test1
+- name: New repo config
   type: git.Repository
   url: https://github.com/SivaprasathDigitalAI/Test_version_control
   username: SivaprasathDigitalAI
-  password: !value "git_Repository_Sample_test1_password"
-- template: Dummy Template
-  scheduledStartDate: 2021-07-15T09:00:00+05:30
-  dueDate: 2021-07-15T10:00:00+05:30
-  phases:
-  - phase: Phase1
-    tasks:
-    - name: Nothing Task
-      type: xlrelease.Task
-    color: '#0079BC'
-  - phase: Phase2
-    tasks:
-    - name: sample phase2
-      type: xlrelease.Task
-    color: '#0079BC'
-  riskProfile: Default risk profile
-- name: Dummy Trigger
-  type: time.Schedule
-  releaseTitle: Sample-Triggered-Release
-  template: Dummy Template
-  tags:
-  - Scheduled-Trigger
-  releaseFolder: Sample
-  periodicity: 0 1 * * * *
-  triggerTime: 2021-07-22T18:01:00.441000
-- directory: ffftftt
+  password: !value "git_Repository_New_repo_config_password"
+- directory: sub-folder-Test2
   children:
   - notifications:
     - notification: TASK_OVERDUE
