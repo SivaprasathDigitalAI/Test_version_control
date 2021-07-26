@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Mon Jul 26 18:04:50 IST 2021
+# Date created:         Mon Jul 26 18:05:50 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,10 @@ kind: Templates
 metadata:
   home: Test-All
 spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.test
+    value: test
 - name: New repo config
   type: git.Repository
   url: https://github.com/SivaprasathDigitalAI/Test_version_control
