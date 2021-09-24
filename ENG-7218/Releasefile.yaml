@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Sep 24 03:04:45 EDT 2021
+# Date created:         Fri Sep 24 03:12:13 EDT 2021
 
 ---
 apiVersion: xl-release/v1
@@ -31,19 +31,8 @@ spec:
   releaseFolder: ./
   gitRepository: ENG-7218
   branch: master
-  commitId: 0d3ade83a7b537899fd8329d3df05b4092ecfcf0
+  commitId: 579a8e16c660a6a7523df17dd5bfddb64ede4ab1
 - notifications:
-  - notification: TASK_OVERDUE
-    priority: Normal
-    subject: "[Release] ${release.title}: ${task.title}"
-    body: |-
-      The **${task.title}** task in the **${release.title}** release is overdue. Tested TASK_OVERDUE
-
-      After the task is completed, please mark it as Completed in Release.
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Owner
   - notification: TASK_FLAGGED
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -55,13 +44,17 @@ spec:
     - Watcher
     - Release Admin
     - Task Team
-  - notification: AUDIT_REPORT_JOB_ABORTED
+  - notification: TASK_OVERDUE
     priority: Normal
-    subject: "[Release] Audit report was aborted"
+    subject: "[Release] ${release.title}: ${task.title}"
     body: |-
-      **Your audit report was aborted!**
+      The **${task.title}** task in the **${release.title}** release is overdue. Tested TASK_OVERDUE
 
-       Please try to generate it again or contact your Release administrator for assistance.
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -85,12 +78,6 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: USER_MENTIONED
-    priority: Normal
-    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
-      \ ${task.title}"
-    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
-      \ in the **${release.title}** release:"
   - notification: COMMENT_ADDED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -102,13 +89,6 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: AUDIT_REPORT_JOB_FAILED
-    priority: Normal
-    subject: "[Release] Audit report has failed"
-    body: |-
-      **Your audit report has failed!**
-
-       Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
@@ -173,7 +153,7 @@ spec:
     - Watcher
     - Release Admin
   - notification: RELEASE_COMPLETED
-    priority: Low
+    priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been completed."
     roles:
@@ -189,37 +169,16 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: AUDIT_REPORT_JOB_COMPLETED
+  - notification: RELEASE_ABORTED
     priority: Normal
-    subject: "[Release] Report '${report.reportName}' is ready"
-    body: |-
-      **Your audit report is complete!**
-
-       '${report.reportName}' is ready for download.
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted. Tested RELEASE_ABORTED"
+    roles:
+    - Release Admin
   - notification: RELEASE_STARTED
     priority: High
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been started."
-    bulkSubject: "[Release] Multiple releases started"
-    bulkBody: |-
-      The following releases have been started:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
-    roles:
-    - Release Admin
-  - notification: RELEASE_ABORTED
-    priority: Low
-    subject: "[Release] ${release.title}"
-    body: "The **${release.title}** release has been aborted. Tested RELEASE_ABORTED"
-    bulkSubject: "[Release] Multiple releases aborted"
-    bulkBody: |-
-      The following releases have been aborted:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
