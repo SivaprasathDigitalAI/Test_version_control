@@ -1,6 +1,6 @@
 // Exported from:        http://LAPTOP-9C20LTLG:5516/#/templates/Folderc7e178190a1840b78f18aab0edb6b2de-Releasedd211bef3c744ab1919f8efcf4cadafb/code
 // Release version:      9.7.0-SNAPSHOT
-// Date created:         Wed Nov 17 03:43:42 EST 2021
+// Date created:         Wed Nov 17 02:50:35 EST 2021
 
 xlr {
   template('FI-914 Template') {
@@ -12,12 +12,6 @@ xlr {
         tasks {
           manual('Manual Task') {
             
-          }
-          userInput('Test') {
-            description 'Please enter the required information below.'
-            variables {
-              
-            }
           }
           manual('Ert') {
             
