@@ -12,6 +12,9 @@ spec:
   - type: xlrelease.PasswordStringVariable
     key: folder.test1
     value: !value "xlrelease_PasswordStringVariable_folder_test1_value"
+  - type: xlrelease.PasswordStringVariable
+    key: folder.testme
+    value: !value "xlrelease_PasswordStringVariable_folder_testme_value"
 - name: Git-Test
   type: git.Repository
   url: https://github.com/SivaprasathDigitalAI/sample-test
