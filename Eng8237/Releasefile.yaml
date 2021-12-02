@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Dec 02 01:59:40 EST 2021
+# Date created:         Thu Dec 02 02:30:42 EST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -17,11 +17,6 @@ spec:
   url: https://github.com/SivaprasathDigitalAI/sample-test
   username: SivaprasathDigitalAI
   password: !value "git_Repository_Git_Test_password"
-- name: Jenkin
-  type: jenkins.Server
-  url: http://localhost:8090
-  username: admin
-  password: !value "jenkins_Server_Jenkin_password"
 - template: ENG-8237
   scheduledStartDate: 2021-12-01T22:30:00-05:00
   dueDate: 2021-12-01T23:30:00-05:00
