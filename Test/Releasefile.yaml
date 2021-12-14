@@ -1,27 +1,26 @@
-# Exported from:        http://xl-release-nightly.xebialabs.com:5516/
-# Release version:      10.3.0-726.113
-# Date created:         Mon Jul 26 17:01:59 CEST 2021
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Tue Dec 14 16:53:27 IST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: test
+  home: Test
 spec:
-- name: test
-  type: git.Repository
-  url: https://github.com/SivaprasathDigitalAI/Test_version_control
-  username: SivaprasathDigitalAI
-  password: !value "git_Repository_test_password"
-- name: asdf
-  type: xlrelease.JGitConnectorConfig
-  url: https://github.com/xebialabs/
-- pattern: My pipeline
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.password1
+    value: !value "xlrelease_PasswordStringVariable_folder_password1_value"
+- pattern: Pattern One
   stages:
-  - stage: Test
-  - stage: Dev
-  - stage: Pre-Prod
-  - stage: Prod
+  - stage: New Stage
+  - stage: New Stage (1)
+- template: First Template
+  scheduledStartDate: 2021-12-14T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
