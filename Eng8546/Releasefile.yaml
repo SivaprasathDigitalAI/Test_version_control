@@ -22,7 +22,6 @@ spec:
     - name: Manual Title
       type: xlrelease.Task
     color: '#3D6C9E'
-  riskProfile: Default risk profile
 - template: With Risk Profile
   scheduledStartDate: 2021-12-14T09:00:00+05:30
   phases:
