@@ -1,27 +1,58 @@
-# Exported from:        http://xl-release-nightly.xebialabs.com:5516/
-# Release version:      10.3.0-726.113
-# Date created:         Mon Jul 26 17:01:59 CEST 2021
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Thu Dec 16 14:38:36 IST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: test
+  home: ENG-8568
 spec:
-- name: test
-  type: git.Repository
-  url: https://github.com/SivaprasathDigitalAI/Test_version_control
-  username: SivaprasathDigitalAI
-  password: !value "git_Repository_test_password"
-- name: asdf
-  type: xlrelease.JGitConnectorConfig
-  url: https://github.com/xebialabs/
-- pattern: My pipeline
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.password.one
+    value: !value "xlrelease_PasswordStringVariable_folder_password_one_value"
+  - type: xlrelease.PasswordStringVariable
+    key: folder.password.two
+    value: !value "xlrelease_PasswordStringVariable_folder_password_two_value"
+  - type: xlrelease.StringVariable
+    key: folder.Text.One
+    value: Text One
+  - type: xlrelease.StringVariable
+    key: folder.Text Two
+    value: Text Two
+- name: Jenkin Server
+  type: jenkins.Server
+  url: http://localhost:8090
+  username: admin
+  password: !value "jenkins_Server_Jenkin_Server_password"
+- pattern: Pattern One
   stages:
-  - stage: Test
-  - stage: Dev
-  - stage: Pre-Prod
-  - stage: Prod
+  - stage: Stage One
+  - stage: Stage Two
+- template: MSSQL Template
+  scheduledStartDate: 2021-12-16T09:00:00+05:30
+  phases:
+  - phase: "8568"
+    tasks:
+    - name: Task One
+      type: xlrelease.Task
+    - name: Gate Task
+      type: xlrelease.GateTask
+      facets:
+      - type: udm.DeploymentTaskFacet
+        version: V1
+        application: Application One
+        environment: Environment
+    color: '#3D6C9E'
+  riskProfile: Default risk profile
+- name: Trigger One
+  type: time.Schedule
+  description: Trigger One Desc
+  releaseTitle: MSSQL Release Title
+  template: MSSQL Template
+  releaseFolder: ./
+  periodicity: 0 0 9-17 * * MON
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
