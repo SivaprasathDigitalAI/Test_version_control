@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 12:52:05 IST 2021
+# Date created:         Fri Dec 17 13:19:43 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -27,18 +27,6 @@ spec:
   path: test
   authentication:
     type: events.NoAuthentication
-- name: Another Repo
-  type: git.Repository
-  variableMapping:
-    password: "${global.git.credentials}"
-  url: https://github.com/SivaprasathDigitalAI/TestRepo
-  username: SivaprasathDigitalAI
-- name: Git-Test
-  type: git.Repository
-  variableMapping:
-    password: "${global.git.credentials}"
-  url: https://github.com/SivaprasathDigitalAI/Test_versioning
-  username: SivaprasathDigitalAI_test
 - name: Jenkin Server
   type: jenkins.Server
   url: http://localhost:8090
@@ -71,10 +59,3 @@ spec:
       endpoint: test
     color: '#3D6C9E'
   riskProfile: Default risk profile
-- name: Trigger One
-  type: time.Schedule
-  description: Trigger One Desc
-  releaseTitle: MSSQL Release Title
-  template: MSSQL Template
-  releaseFolder: ./
-  periodicity: 0 0 9-17 * * MON
