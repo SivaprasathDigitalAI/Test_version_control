@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:56:52 IST 2021
+# Date created:         Fri Dec 17 16:58:52 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -11,6 +11,8 @@ spec:
 - folderVariables:
   - type: xlrelease.PasswordStringVariable
     key: folder.token
+    label: admin
+    value: !value "xlrelease_PasswordStringVariable_folder_token_value"
   - type: xlrelease.StringVariable
     key: folder.token.value
     value: secret
