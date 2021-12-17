@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:22:10 IST 2021
+# Date created:         Fri Dec 17 16:54:52 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -27,7 +27,7 @@ spec:
     tasks:
     - name: Patten One
       type: delivery.FindOrCreateDelivery
-      pattern: Deliveries/Deliverycc7f14d025594b858b5b81418c370b07
+      pattern: ENG-8568/Pattern One
       folder: ./
     - name: Display
       type: test.DisplayPassword
