@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 15:39:37 IST 2021
+# Date created:         Fri Dec 17 16:14:30 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -9,31 +9,35 @@ metadata:
   home: ENG-8568-1
 spec:
 - folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.token
   - type: xlrelease.StringVariable
     key: folder.token.value
     value: secret
-  - type: xlrelease.PasswordStringVariable
-    key: folder.token
-    value: !value "xlrelease_PasswordStringVariable_folder_token_value"
 - name: Post-Me
   type: events.PostWebhookEndpoint
   path: postMe
   authentication:
-    type: events.TokenAuthentication
-    webhookToken: !value "events_TokenAuthentication_webhookToken"
+    type: events.NoAuthentication
 - template: Template 2_8568
   scheduledStartDate: 2021-12-17T09:00:00+05:30
+  dueDate: 2021-12-17T10:00:00+05:30
   phases:
   - phase: 8568_Phase
     tasks:
     - name: Patten One
       type: delivery.FindOrCreateDelivery
-      pattern: ./Pattern One again
+      pattern: Deliveries/Deliverycc7f14d025594b858b5b81418c370b07
       folder: ./
+    - name: Display
+      type: test.DisplayPassword
+      variableMapping:
+        pythonScript.password: "${folder.token}"
     color: '#3D6C9E'
   riskProfile: Default risk profile
 - template: Test one
   scheduledStartDate: 2021-12-17T09:00:00+05:30
+  dueDate: 2021-12-17T10:00:00+05:30
   phases:
   - phase: New Phase
   riskProfile: Default risk profile
