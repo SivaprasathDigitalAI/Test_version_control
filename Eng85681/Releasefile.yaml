@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 17:54:09 IST 2021
+# Date created:         Fri Dec 17 18:04:53 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -36,6 +36,9 @@ spec:
 - pattern: Another Test Pattern
   stages:
   - stage: Test Stage
+  - stage: New Stage
+- pattern: Pattern 6
+  stages:
   - stage: New Stage
 - template: Template 2_8568
   scheduledStartDate: 2021-12-17T09:00:00+05:30
