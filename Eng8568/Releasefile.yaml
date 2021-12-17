@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 12:46:35 IST 2021
+# Date created:         Fri Dec 17 12:52:05 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -27,6 +27,12 @@ spec:
   path: test
   authentication:
     type: events.NoAuthentication
+- name: Another Repo
+  type: git.Repository
+  variableMapping:
+    password: "${global.git.credentials}"
+  url: https://github.com/SivaprasathDigitalAI/TestRepo
+  username: SivaprasathDigitalAI
 - name: Jenkin Server
   type: jenkins.Server
   url: http://localhost:8090
@@ -35,6 +41,10 @@ spec:
   type: jenkins.Server
   url: http://localhost:8090
   username: admin
+- pattern: Pattern One
+  stages:
+  - stage: Stage One
+  - stage: Stage Two
 - template: MSSQL Template
   scheduledStartDate: 2021-12-16T09:00:00+05:30
   dueDate: 2021-12-16T10:00:00+05:30
@@ -48,11 +58,11 @@ spec:
     - name: Create Pattern
       type: delivery.CreateDelivery
       ^title: Test
-      pattern: Deliveries/Delivery98d95607258f4bada5a0f8ee9a64f6f4
+      pattern: ./Pattern One
       folder: ./
     - name: Test WebHook
       type: webhook.WaitForJsonEvent
-      endpoint: Global-Post
+      endpoint: test
     color: '#3D6C9E'
   riskProfile: Default risk profile
 - name: Trigger One
