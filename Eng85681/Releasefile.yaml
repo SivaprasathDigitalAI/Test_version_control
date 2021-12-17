@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:56:12 IST 2021
+# Date created:         Fri Dec 17 16:56:52 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -22,6 +22,10 @@ spec:
   path: postMe
   authentication:
     type: events.NoAuthentication
+- pattern: Another Test Pattern
+  stages:
+  - stage: Test Stage
+  - stage: New Stage
 - template: Template 2_8568
   scheduledStartDate: 2021-12-17T09:00:00+05:30
   dueDate: 2021-12-17T10:00:00+05:30
