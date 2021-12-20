@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Mon Dec 20 14:22:45 IST 2021
+# Date created:         Mon Dec 20 14:26:10 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -64,6 +64,8 @@ spec:
     tasks:
     - name: Test Gate
       type: xlrelease.GateTask
+    - name: Another Task
+      type: xlrelease.Task
     color: '#3D6C9E'
   scriptUserPassword: !value "xlrelease_Release_Test_one_scriptUserPassword"
   riskProfile: Default risk profile
