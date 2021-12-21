@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Dec 21 13:43:25 IST 2021
+# Date created:         Tue Dec 21 16:48:51 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -61,6 +61,10 @@ spec:
     - name: Test Script
       type: xlrelease.ScriptTask
       script: |-
+        from com.xebialabs.deployit.util import PasswordEncrypter
+        passwordEncrypter = PasswordEncrypter.getInstance()
+        print passwordEncrypter.ensureDecrypted(folderVariables['folder.password.one'])
+        print passwordEncrypter.ensureDecrypted(folderVariables['folder.password.two'])
         print folderVariables['folder.password.one']
         print folderVariables['folder.password.two']
     - name: Task One
