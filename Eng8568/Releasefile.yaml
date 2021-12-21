@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Dec 21 13:26:56 IST 2021
+# Date created:         Tue Dec 21 13:32:07 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -18,8 +18,11 @@ spec:
   - type: xlrelease.PasswordStringVariable
     key: folder.password.one
     label: admin
+    value: !value "xlrelease_PasswordStringVariable_folder_password_one_value"
   - type: xlrelease.PasswordStringVariable
     key: folder.password.two
+    label: admin
+    value: !value "xlrelease_PasswordStringVariable_folder_password_two_value"
 - name: test
   type: events.GetWebhookEndpoint
   path: test
@@ -46,6 +49,11 @@ spec:
   phases:
   - phase: "8568"
     tasks:
+    - name: Test Script
+      type: xlrelease.ScriptTask
+      script: |-
+        print folderVariables['folder.password.one']
+        print folderVariables['folder.password.two']
     - name: Task One
       type: xlrelease.Task
     - name: Gate Task
