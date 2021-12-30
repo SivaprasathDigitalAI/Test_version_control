@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Dec 30 14:43:18 IST 2021
+# Date created:         Thu Dec 30 14:50:48 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -17,6 +17,9 @@ spec:
   url: http://localhost/root/test-6107
   username: root
   password: !value "git_Repository_GIt_Test_Local_password"
+- pattern: Pattern One
+  stages:
+  - stage: New Stage
 - template: Template One
   scheduledStartDate: 2021-12-29T09:00:00+05:30
   dueDate: 2021-12-29T10:00:00+05:30
@@ -24,6 +27,8 @@ spec:
   - phase: New Phase
     tasks:
     - name: MT
+      type: xlrelease.Task
+    - name: MT2
       type: xlrelease.Task
   variables:
   - type: xlrelease.PasswordStringVariable
