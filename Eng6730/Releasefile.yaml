@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Fri Feb 11 17:21:05 IST 2022
+# Date created:         Mon Feb 14 15:54:16 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -39,7 +39,7 @@ spec:
   releaseFolder: ./
   gitRepository: Local_git
   branch: master
-  commitId: 3128a984d34e3fc26b93e10bc449b67b12e10fcb
+  commitId: 1783589f29822be0c97afad998bc1c614db9933d
 - name: Git Trigger 3
   type: git.Poll
   releaseTitle: ENG-6760-REL3
@@ -47,7 +47,7 @@ spec:
   releaseFolder: ./
   gitRepository: Local_git
   branch: master
-  commitId: 3128a984d34e3fc26b93e10bc449b67b12e10fcb
+  commitId: 1783589f29822be0c97afad998bc1c614db9933d
 - name: Git Trigger 6
   type: git.Poll
   releaseTitle: ENG-6730-Rel5
@@ -55,7 +55,7 @@ spec:
   releaseFolder: ./
   gitRepository: Local_git
   branch: master
-  commitId: 3128a984d34e3fc26b93e10bc449b67b12e10fcb
+  commitId: 1783589f29822be0c97afad998bc1c614db9933d
 - name: Git-Trigger 5
   type: git.Poll
   releaseTitle: ENG-6730-REL5
@@ -63,7 +63,7 @@ spec:
   releaseFolder: ./
   gitRepository: Local_git
   branch: master
-  commitId: 3128a984d34e3fc26b93e10bc449b67b12e10fcb
+  commitId: 1783589f29822be0c97afad998bc1c614db9933d
 - name: Git-Trigger-1
   type: git.Poll
   releaseTitle: ENG-6730-GIt
@@ -71,7 +71,7 @@ spec:
   releaseFolder: ./
   gitRepository: Local_git
   branch: master
-  commitId: 3128a984d34e3fc26b93e10bc449b67b12e10fcb
+  commitId: 1783589f29822be0c97afad998bc1c614db9933d
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
