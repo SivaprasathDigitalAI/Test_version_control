@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Feb 15 11:55:48 IST 2022
+# Date created:         Wed Feb 16 15:38:15 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,20 @@ kind: Templates
 metadata:
   home: ENG-1000
 spec:
+- name: Local_github
+  type: xlrelease.GitHubScmConnectorConfig
+  repository: SivaprasathDigitalAI/Test_versioning
+  credential:
+    type: xlrelease.GitHubOAuth2Token
+    token: !value "xlrelease_GitHubOAuth2Token_token"
+- template: Tq
+  scheduledStartDate: 2022-02-16T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT1
+      type: xlrelease.Task
+  riskProfile: Default risk profile
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
