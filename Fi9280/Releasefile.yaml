@@ -62,7 +62,6 @@ spec:
       - type: xlrelease.StringVariable
         key: Test
         label: admin
-        valueProvider: Test
         inherited: true
       riskProfile: Default risk profile
       template: ./TEST-1108
