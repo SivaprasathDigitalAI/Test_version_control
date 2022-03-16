@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Wed Mar 16 17:59:13 IST 2022
+# Date created:         Wed Mar 16 21:48:28 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: T1
   scheduledStartDate: 2022-03-15T09:00:00+05:30
+  dueDate: 2022-03-15T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -20,6 +21,7 @@ spec:
   riskProfile: Default risk profile
 - template: TEST-1108
   scheduledStartDate: 2022-03-16T09:00:00+05:30
+  dueDate: 2022-03-16T10:00:00+05:30
   phases:
   - phase: New Phase
   variables:
@@ -44,6 +46,7 @@ spec:
   riskProfile: Default risk profile
 - template: TEST-1108-Dep
   scheduledStartDate: 2022-03-16T09:00:00+05:30
+  dueDate: 2022-03-16T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -63,6 +66,7 @@ spec:
         key: Test
         label: admin
         inherited: true
+        value: eeee
       riskProfile: Default risk profile
       template: ./TEST-1108
   riskProfile: Default risk profile
