@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Jun 16 16:34:33 IST 2022
+# Date created:         Thu Jun 16 16:34:53 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -13,6 +13,10 @@ spec:
   url: https://github.com/SivaprasathDigitalAI/Test_versioning
   username: SivaprasathDigitalAI
   password: !value "git_Repository_Git_Hub_password"
+- pattern: P1
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
 - template: DAI 161005 test
   owner: admin
   scheduledStartDate: 2022-05-31T18:30:00+05:30
