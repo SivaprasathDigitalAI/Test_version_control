@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Wed Aug 24 14:57:34 IST 2022
+# Date created:         Wed Aug 24 16:21:51 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -13,6 +13,9 @@ spec:
   path: webhook
   authentication:
     type: events.NoAuthentication
+- pattern: P1
+  stages:
+  - stage: New Stage
 - template: T1
   scheduledStartDate: 2022-08-17T09:00:00+05:30
   phases:
