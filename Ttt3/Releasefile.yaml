@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Mar 06 13:38:21 IST 2023
+# Date created:         Mon Mar 06 17:10:55 IST 2023
 
 ---
 apiVersion: xl-release/v1
@@ -13,14 +13,13 @@ spec:
   url: https://github.com/SivaprasathDigitalAI/sample-test
   username: SivaprasathDigitalAI
   password: !value "git_Repository_Test_password"
+- pattern: "44"
+  stages:
+  - stage: New Stage
 - template: T1
   scheduledStartDate: 2023-03-06T09:00:00+05:30
   phases:
   - phase: New Phase
-    tasks:
-    - name: MT
-      type: xlrelease.Task
-  - phase: second Phase
     tasks:
     - name: MT
       type: xlrelease.Task
