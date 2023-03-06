@@ -20,7 +20,7 @@ spec:
     tasks:
     - name: MT
       type: xlrelease.Task
-  - phase: New Phase1
+  - phase: second Phase
     tasks:
     - name: MT
       type: xlrelease.Task
