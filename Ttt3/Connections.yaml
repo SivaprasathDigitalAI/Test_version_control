@@ -8,7 +8,8 @@ kind: Templates
 metadata:
   home: TTT3
 spec:
-- pattern: DDDD
-  stages:
-  - stage: New Stage
-  - stage: New Stage (1)
+- name: Test
+  type: git.Repository
+  url: https://github.com/SivaprasathDigitalAI/sample-test
+  username: SivaprasathDigitalAI
+  password: !value "git_Repository_Test_password"
