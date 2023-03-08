@@ -1,0 +1,12 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Wed Mar 08 14:01:23 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+- Ttt3/Configs.yaml
+- Ttt3/Patterns.yaml
+- Ttt3/Templates.yaml
+- Ttt3/Triggers.yaml
