@@ -1,0 +1,70 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Thu Mar 09 18:44:18 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: TTT3
+spec:
+- name: DB
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Avg. release duration
+    type: xlrelease.AvgReleaseDurationTile
+    row: 0
+    col: 4
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 1
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 2
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 0
+    col: 5
+  - name: Avg. release duration over time
+    type: xlrelease.AvgReleaseDurationByMonthTile
+    row: 3
+    col: 2
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 2
+    col: 2

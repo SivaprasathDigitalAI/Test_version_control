@@ -8,9 +8,10 @@ kind: Templates
 metadata:
   home: TTT3
 spec:
-- name: T1
-  type: time.Schedule
-  releaseTitle: DDDDD
-  template: TT2
-  periodicity: 0 0 9-17 * * MON-FRI
-  enabled: false
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.V1
+    value: !value "xlrelease_PasswordStringVariable_folder_V1_value"
+  - type: xlrelease.StringVariable
+    key: folder.v2
+    value: v2
