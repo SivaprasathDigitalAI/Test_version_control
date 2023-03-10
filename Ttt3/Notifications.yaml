@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Fri Mar 10 15:10:14 IST 2023
+# Date created:         Fri Mar 10 15:12:35 IST 2023
 
 ---
 apiVersion: xl-release/v1
@@ -9,17 +9,6 @@ metadata:
   home: TTT3
 spec:
 - notifications:
-  - notification: TASK_FLAGGED
-    priority: High
-    subject: "[Release] ${release.title}: ${task.title}"
-    body: |-
-      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
-
-      **${release.flagComment}**
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Team
   - notification: TASK_OVERDUE
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -31,6 +20,24 @@ spec:
     - Watcher
     - Release Admin
     - Task Owner
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -54,6 +61,12 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
   - notification: COMMENT_ADDED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -65,6 +78,13 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
@@ -152,23 +172,44 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: RELEASE_ABORTED
+  - notification: AUDIT_REPORT_JOB_COMPLETED
     priority: Normal
-    subject: "[Release] ${release.title}"
-    body: "The **${release.title}** release has been aborted."
-    roles:
-    - Release Admin
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
   - notification: RELEASE_STARTED
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
     body: "The active task **${task.title}** in the **${release.title}** release is\
-      \ now assigned to ${task.ownerFullName}. Testing Assigned Tasks"
+      \ now assigned to ${task.ownerFullName}."
     roles:
     - Watcher
     - Task Team
