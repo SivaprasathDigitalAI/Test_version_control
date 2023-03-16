@@ -18,7 +18,7 @@ spec:
       type: xlrelease.Task
   riskProfile: Default risk profile
   
-  ---
+---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
