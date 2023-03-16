@@ -17,7 +17,6 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RRT
       riskProfile: Default risk profile
-      template: Applications/Folder0c330e354cda46469be1da79d15ab966/Release6b5a7c3d52e04308aae51e589c159475
       folder: ./
   riskProfile: Default risk profile
 - template: Tp1
