@@ -17,3 +17,19 @@ spec:
     - name: MT
       type: xlrelease.Task
   riskProfile: Default risk profile
+  
+  ---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: TTT3
+spec:
+- template: Tp1
+  scheduledStartDate: 2023-03-06T09:00:00+05:30
+  dueDate: 2023-03-06T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT
+      type: xlrelease.Task
+  riskProfile: Default risk profile
