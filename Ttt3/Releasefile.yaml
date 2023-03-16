@@ -13,3 +13,4 @@ spec:
   - Permissions.yaml
   - Dashboards.yaml
   - Connections.yaml
+  - Patterns.yaml
