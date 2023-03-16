@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Wed Mar 15 19:18:56 IST 2023
+# Date created:         Thu Mar 16 17:34:21 IST 2023
 
 ---
 apiVersion: xl-release/v1
@@ -8,22 +8,18 @@ kind: Templates
 metadata:
   home: TTT3
 spec:
-- template: T1
-  scheduledStartDate: 2023-03-06T09:00:00+05:30
-  dueDate: 2023-03-06T10:00:00+05:30
+- template: T3
+  scheduledStartDate: 2023-03-16T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: MT
-      type: xlrelease.Task
+    - name: CRT
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: RRT
+      riskProfile: Default risk profile
+      template: Applications/Folder0c330e354cda46469be1da79d15ab966/Release6b5a7c3d52e04308aae51e589c159475
+      folder: ./
   riskProfile: Default risk profile
-  
----
-apiVersion: xl-release/v1
-kind: Templates
-metadata:
-  home: TTT3
-spec:
 - template: Tp1
   scheduledStartDate: 2023-03-06T09:00:00+05:30
   dueDate: 2023-03-06T10:00:00+05:30
