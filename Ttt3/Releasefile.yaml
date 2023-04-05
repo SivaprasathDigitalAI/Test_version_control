@@ -1,13 +1,47 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Wed Apr 05 17:14:30 IST 2023
+# Date created:         Wed Apr 05 18:11:08 IST 2023
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  home: TTT3
 spec:
-  imports:
-  - Connections.yaml
-  - Variables.yaml
-  - Patterns.yaml
-  - Templates.yaml
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.V1
+    value: !value "xlrelease_PasswordStringVariable_folder_V1_value"
+  - type: xlrelease.StringVariable
+    key: folder.v2
+    value: v2
+- name: Test
+  type: git.Repository
+  url: https://github.com/SivaprasathDigitalAI/sample-test
+  username: SivaprasathDigitalAI
+  password: !value "git_Repository_Test_password"
+- pattern: DDDD
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
+- template: T3
+  scheduledStartDate: 2023-03-16T09:00:00+05:30
+  dueDate: 2023-03-16T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: CRT
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: RRT
+      riskProfile: Default risk profile
+      folder: ./
+  riskProfile: Default risk profile
+- template: Tp1
+  scheduledStartDate: 2023-03-06T09:00:00+05:30
+  dueDate: 2023-03-06T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT
+      type: xlrelease.Task
+  riskProfile: Default risk profile
