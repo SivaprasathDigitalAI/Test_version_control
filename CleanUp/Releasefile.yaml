@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Apr 20 17:37:39 IST 2023
+# Date created:         Thu Apr 20 17:41:30 IST 2023
 
 ---
 apiVersion: xl-release/v1
@@ -10,5 +10,6 @@ spec:
   - Pattern_Delivery9855600bc2f94e5fbcb4e6f54e9820b2
   - Trigger_Triggercd2c11236cf948289d3d2f035b1a2493
   - Variables.yaml
+  - Pattern_Deliverycbd61556c9e0465489bfb28597c3c11b
   - Template_Release7ce496edf9084975aaca643d6a35ba88
   - Template_Release1530d74658554e24aa3b098bb907b951

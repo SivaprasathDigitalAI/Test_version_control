@@ -8,12 +8,9 @@ kind: Templates
 metadata:
   home: CleanUp
 spec:
-- template: T2
-  scheduledStartDate: 2023-04-20T09:00:00+05:30
-  dueDate: 2023-04-20T10:00:00+05:30
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: GG
-      type: xlrelease.Task
-  riskProfile: Default risk profile
+- pattern: P2
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
+  - stage: New Stage (2)
+  - stage: New Stage (3)
