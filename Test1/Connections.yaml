@@ -1,0 +1,15 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5517/
+# Release version:      23.3.0-SNAPSHOT
+# Date created:         Fri May 26 17:39:12 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: Test1
+spec:
+- name: gitTest
+  type: git.Repository
+  url: https://github.com/SivaprasathDigitalAI/sample-test
+  username: SivaprasathDigitalAI
+  password: !value "git_Repository_gitTest_password"
