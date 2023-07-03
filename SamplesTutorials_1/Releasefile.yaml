@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Jul 03 16:05:04 IST 2023
+# Date created:         Mon Jul 03 16:05:26 IST 2023
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,11 @@ kind: Templates
 metadata:
   home: Samples & Tutorials
 spec:
+- pattern: Tqq
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
+  - stage: New Stage (2)
 - template: Configure Release
   scheduledStartDate: 2023-07-03T09:00:00+05:30
   phases:
