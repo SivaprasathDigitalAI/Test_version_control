@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 17:19:48 IST 2024
+# Date created:         Wed Jan 31 18:38:55 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -10,6 +10,40 @@ metadata:
 spec:
 - directory: "."
   teams:
+  - name: Release Admin
+    roles:
+    - Tester2
+    users:
+    - admin
+    permissions:
+    - release#edit_precondition
+    - release#edit
+    - workflow#view_execution
+    - release#advance_task_transition
+    - workflow#abort_execution
+    - release#restart_phase
+    - release#lock_task
+    - folder#view
+    - release#edit_task_script
+    - release#edit_task_flag
+    - release#edit_task_configuration_facet
+    - release#edit_task_dates
+    - workflow#start_execution
+    - release#edit_task
+    - release#edit_task_attachments
+    - release#task_transition
+    - trigger#view_trigger
+    - release#reassign_task
+    - app_pipelines#view
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
+    - release#edit_task_description
+    - trigger#edit_trigger
+    - release#view
+    - release#edit_blackout
+    - release#start
+    - release#edit_failure_handler
+    - release#abort
   - name: Template Owner
     roles:
     - Tester3
@@ -53,37 +87,3 @@ spec:
     - folder#edit
     - dashboard#view
     - folder#generate_configuration
-  - name: Release Admin
-    roles:
-    - Tester2
-    users:
-    - admin
-    permissions:
-    - release#edit_precondition
-    - release#edit
-    - workflow#view_execution
-    - release#advance_task_transition
-    - workflow#abort_execution
-    - release#restart_phase
-    - release#lock_task
-    - folder#view
-    - release#edit_task_script
-    - release#edit_task_flag
-    - release#edit_task_configuration_facet
-    - release#edit_task_dates
-    - workflow#start_execution
-    - release#edit_task
-    - release#edit_task_attachments
-    - release#task_transition
-    - trigger#view_trigger
-    - release#reassign_task
-    - app_pipelines#view
-    - release#edit_task_input_output_properties
-    - release#edit_task_tags
-    - release#edit_task_description
-    - trigger#edit_trigger
-    - release#view
-    - release#edit_blackout
-    - release#start
-    - release#edit_failure_handler
-    - release#abort

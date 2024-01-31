@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 17:19:48 IST 2024
+# Date created:         Wed Jan 31 18:38:55 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -10,49 +10,6 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: Template Owner
-    roles:
-    - Tester3
-    users:
-    - admin
-    permissions:
-    - template#create_release_other_folder
-    - template#edit
-    - trigger#view_trigger
-    - template#lock_task
-    - template#view
-    - app_pipelines#view
-    - folder#view
-    - template#create_release
-    - template#edit_precondition
-    - template#edit_failure_handler
-  - name: Folder Owner
-    roles:
-    - Tester1
-    users:
-    - admin
-    permissions:
-    - folder#edit_variables
-    - delivery_pattern#edit
-    - folder#edit_configuration
-    - app_pipelines#view
-    - delivery#edit
-    - folder#view_versions
-    - folder#apply_changes
-    - group#view
-    - folder#edit_versions
-    - folder#edit_notifications
-    - app_pipelines#edit
-    - delivery_pattern#view
-    - group#edit
-    - delivery#view
-    - delivery#edit_tracked_item
-    - folder#view
-    - folder#edit_security
-    - dashboard#edit
-    - folder#edit
-    - dashboard#view
-    - folder#generate_configuration
   - name: Release Admin
     roles:
     - Tester2
@@ -87,3 +44,46 @@ spec:
     - release#start
     - release#edit_failure_handler
     - release#abort
+  - name: Folder Owner
+    roles:
+    - Tester1
+    users:
+    - admin
+    permissions:
+    - folder#edit_variables
+    - delivery_pattern#edit
+    - folder#edit_configuration
+    - app_pipelines#view
+    - delivery#edit
+    - folder#view_versions
+    - folder#apply_changes
+    - group#view
+    - folder#edit_versions
+    - folder#edit_notifications
+    - app_pipelines#edit
+    - delivery_pattern#view
+    - group#edit
+    - delivery#view
+    - delivery#edit_tracked_item
+    - folder#view
+    - folder#edit_security
+    - dashboard#edit
+    - folder#edit
+    - dashboard#view
+    - folder#generate_configuration
+  - name: Template Owner
+    roles:
+    - Tester3
+    users:
+    - admin
+    permissions:
+    - template#create_release_other_folder
+    - template#edit
+    - trigger#view_trigger
+    - template#lock_task
+    - template#view
+    - app_pipelines#view
+    - folder#view
+    - template#create_release
+    - template#edit_precondition
+    - template#edit_failure_handler

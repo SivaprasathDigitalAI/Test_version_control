@@ -6,17 +6,14 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child/D25848-grandchild
 spec:
-- template: Template -Base
+- template: Clean Up Template
   scheduledStartDate: 2024-01-31T09:00:00+05:30
-  dueDate: 2024-01-31T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: MT
       type: xlrelease.Task
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template__Base_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
