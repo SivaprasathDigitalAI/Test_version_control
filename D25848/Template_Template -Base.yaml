@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 11:48:45 IST 2024
+# Date created:         Wed Jan 31 11:59:01 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: Template -Base
   scheduledStartDate: 2024-01-31T09:00:00+05:30
+  dueDate: 2024-01-31T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:

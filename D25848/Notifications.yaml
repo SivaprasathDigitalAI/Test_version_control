@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 11:48:45 IST 2024
+# Date created:         Wed Jan 31 11:59:01 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,6 +9,17 @@ metadata:
   path: /
 spec:
 - notifications:
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
   - notification: TASK_FLAGGED
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -20,17 +31,13 @@ spec:
     - Watcher
     - Release Admin
     - Task Team
-  - notification: TASK_OVERDUE
-    priority: High
-    subject: "[Release] ${release.title}: ${task.title}"
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
     body: |-
-      The **${task.title}** task in the **${release.title}** release is overdue.
+      **Your audit report was aborted!**
 
-      After the task is completed, please mark it as Completed in Release. ANother Dummy Content
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Owner
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -54,6 +61,12 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
   - notification: COMMENT_ADDED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -65,6 +78,13 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
@@ -109,6 +129,13 @@ spec:
       You can retry the failed task, reassign it to somebody else or abort the release.
     roles:
     - Release Admin
+  - notification: USER_TOKEN_ABOUT_TO_EXPIRE
+    priority: Normal
+    subject: "[Release] Your personal access token is about to expire"
+    body: |-
+      Your personal access token "'${token.tokenNote}'" will expire in about ${token.expirationDurationInHours} hours.
+
+       If this token is still needed, visit [Access tokens](${url}#/personal-access-token) to generate an equivalent.
   - notification: RELEASE_FLAGGED
     priority: High
     subject: "[Release] ${release.title}"
@@ -140,21 +167,46 @@ spec:
     body: |-
       The **${task.title}** task in the **${release.title}** release needs your input.
 
-      Please enter the required information so the release can continue. Dummy content
+      Please enter the required information so the release can continue.
     roles:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: RELEASE_ABORTED
+  - notification: AUDIT_REPORT_JOB_COMPLETED
     priority: Normal
-    subject: "[Release] ${release.title}"
-    body: "The **${release.title}** release has been aborted."
-    roles:
-    - Release Admin
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
+  - notification: GENERIC_SYSTEM_NOTIFICATION
+    priority: Normal
+    subject: "${notification.subject}"
+    body: "${notification.body}"
   - notification: RELEASE_STARTED
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
