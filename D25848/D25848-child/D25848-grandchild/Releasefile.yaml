@@ -4,13 +4,9 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
-metadata:
-  path: /
+kind: Import
 spec:
-- pattern: P1
-  stages:
-  - stage: Stage one
-  - stage: stage two
-  - stage: Stage Three
-  autoComplete: true
+  imports:
+  - Notifications.yaml
+  - Permissions.yaml
+  - Template_GrandChild-Template1.yaml

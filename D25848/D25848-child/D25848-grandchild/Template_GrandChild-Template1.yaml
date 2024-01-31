@@ -6,11 +6,11 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child/D25848-grandchild
 spec:
-- pattern: P1
-  stages:
-  - stage: Stage one
-  - stage: stage two
-  - stage: Stage Three
-  autoComplete: true
+- template: GrandChild-Template1
+  scheduledStartDate: 2024-01-31T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+  author: admin

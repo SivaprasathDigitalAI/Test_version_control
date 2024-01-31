@@ -1,14 +1,12 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 12:29:27 IST 2024
+# Date created:         Wed Jan 31 17:05:28 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Connections.yaml
   - Notifications.yaml
   - Permissions.yaml
-  - Template_Template Child.yaml
-  - Trigger_Child Trigger.yaml
+  - Template_GGGG.yaml
