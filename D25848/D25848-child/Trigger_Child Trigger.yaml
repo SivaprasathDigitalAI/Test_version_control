@@ -6,16 +6,14 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child
 spec:
-- name: Trigger One
+- name: Child Trigger
   type: time.Schedule
-  releaseTitle: "D-25848_${triggerTime}"
-  template: Template -Base
+  releaseTitle: Dummy Title
+  template: Template Child
   tags:
-  - Dummy Trigger tag
+  - Child Trigger Release
   releaseFolder: ./
-  pollType: REPEAT
-  periodicity: "90"
+  periodicity: 0 0 * * * *
   enabled: false
-  triggerTime: 2024-01-31T11:43:15.043000

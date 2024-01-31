@@ -6,7 +6,7 @@
 apiVersion: xl-release/v1
 kind: Permissions
 metadata:
-  path: /
+  path: D25848-child
 spec:
 - directory: "."
   teams:

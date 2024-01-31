@@ -4,12 +4,11 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
-metadata:
-  path: /
+kind: Import
 spec:
-- pattern: p2
-  stages:
-  - stage: P2 Stage One
-  - stage: P2 Stage Two
-  - stage: P3 Stage Three
+  imports:
+  - Connections.yaml
+  - Notifications.yaml
+  - Permissions.yaml
+  - Template_Template Child.yaml
+  - Trigger_Child Trigger.yaml

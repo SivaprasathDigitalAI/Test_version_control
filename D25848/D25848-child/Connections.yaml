@@ -6,10 +6,10 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child
 spec:
-- pattern: p2
-  stages:
-  - stage: P2 Stage One
-  - stage: P2 Stage Two
-  - stage: P3 Stage Three
+- name: Dummy Jira Connection
+  type: jenkins.Server
+  url: http://localhost:7000
+  username: admin
+  password: !value "jenkins_Server_Dummy_Jira_Connection_password"

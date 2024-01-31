@@ -8,15 +8,15 @@ kind: Templates
 metadata:
   path: /
 spec:
-- template: Template -Base
+- template: Work Flow Template
   scheduledStartDate: 2024-01-31T09:00:00+05:30
   dueDate: 2024-01-31T10:00:00+05:30
   phases:
-  - phase: New Phase
+  - phase: Workflow tasks
     tasks:
-    - name: MT
+    - name: WFMT
       type: xlrelease.Task
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template__Base_scriptUserPassword"
-  riskProfile: Default risk profile
+  kind: WORKFLOW
+  disableNotifications: true
   author: admin
+  defaultTargetFolder: ./

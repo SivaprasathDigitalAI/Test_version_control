@@ -6,7 +6,7 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child
 spec:
 - notifications:
   - notification: TASK_FLAGGED

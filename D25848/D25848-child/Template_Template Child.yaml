@@ -6,17 +6,24 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: D25848-child
 spec:
-- template: Template -Base
+- template: Template Child
   scheduledStartDate: 2024-01-31T09:00:00+05:30
-  dueDate: 2024-01-31T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: MT
       type: xlrelease.Task
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template__Base_scriptUserPassword"
+    - name: CD
+      type: delivery.CreateDelivery
+      ^title: Child Delivery
+      ^startDate: 2024-01-31T12:01:00+05:30
+      ^endDate: 2024-01-31T13:01:00+05:30
+      pattern: D-25848/P1
+      folder: D-25848
+  scriptUsername: "${folder.admin_username}"
+  variableMapping:
+    scriptUserPassword: "${folder.admin_password}"
   riskProfile: Default risk profile
   author: admin
