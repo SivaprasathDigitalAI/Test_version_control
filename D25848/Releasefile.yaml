@@ -1,17 +1,19 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 11:47:59 IST 2024
+# Date created:         Wed Jan 31 11:48:45 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Dashboards.yaml
+  - Dashboard_Custom D1.yaml
+  - Dashboard_Deployments.yaml
   - Notifications.yaml
-  - Patterns.yaml
+  - Pattern_P1.yaml
+  - Pattern_p2.yaml
   - Permissions.yaml
-  - Templates.yaml
-  - Triggers.yaml
+  - Template_Template -Base.yaml
+  - Trigger_Trigger One.yaml
   - Variables.yaml
-  - Workflows.yaml
+  - Workflow_Work Flow Template.yaml
