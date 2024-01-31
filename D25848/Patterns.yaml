@@ -1,0 +1,21 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      24.1.0-SNAPSHOT
+# Date created:         Wed Jan 31 11:47:59 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+spec:
+- pattern: P1
+  stages:
+  - stage: Stage one
+  - stage: stage two
+  - stage: Stage Three
+  autoComplete: true
+- pattern: p2
+  stages:
+  - stage: P2 Stage One
+  - stage: P2 Stage Two
+  - stage: P3 Stage Three

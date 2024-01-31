@@ -1,0 +1,21 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      24.1.0-SNAPSHOT
+# Date created:         Wed Jan 31 11:47:59 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+spec:
+- name: Trigger One
+  type: time.Schedule
+  releaseTitle: "D-25848_${triggerTime}"
+  template: Template -Base
+  tags:
+  - Dummy Trigger tag
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "90"
+  enabled: false
+  triggerTime: 2024-01-31T11:43:15.043000
