@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Wed Jan 31 17:05:28 IST 2024
+# Date created:         Wed Jan 31 17:19:48 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,4 +9,3 @@ spec:
   imports:
   - Notifications.yaml
   - Permissions.yaml
-  - Template_GrandChild-Template1.yaml
