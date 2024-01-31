@@ -2,9 +2,3 @@
 # Release version:      24.1.0-SNAPSHOT
 # Date created:         Wed Jan 31 18:58:35 IST 2024
 
----
-apiVersion: xl-release/v1
-kind: Import
-spec:
-  imports:
-  - Template_Clean Up Template.yaml
