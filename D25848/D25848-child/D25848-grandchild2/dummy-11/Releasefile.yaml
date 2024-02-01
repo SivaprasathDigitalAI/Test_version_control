@@ -2,9 +2,3 @@
 # Release version:      24.1.0-SNAPSHOT
 # Date created:         Thu Feb 01 13:52:29 IST 2024
 
----
-apiVersion: xl-release/v1
-kind: Import
-spec:
-  imports:
-  - Templates.yaml
