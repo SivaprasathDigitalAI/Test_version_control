@@ -11,8 +11,3 @@ spec:
 - directory: child-1
   children:
   - directory: Grandchild-3
-- directory: child-2
-  children:
-  - directory: grandchild-1
-    children:
-    - directory: grandchild-2

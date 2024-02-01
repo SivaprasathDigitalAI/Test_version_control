@@ -8,9 +8,6 @@ kind: Templates
 metadata:
   home: D25848_1
 spec:
-- directory: child-1
-  children:
-  - directory: Grandchild-3
 - directory: child-2
   children:
   - directory: grandchild-1
