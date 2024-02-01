@@ -7,4 +7,4 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Template_Clean Up Template.yaml
+  - Template_F1.yaml

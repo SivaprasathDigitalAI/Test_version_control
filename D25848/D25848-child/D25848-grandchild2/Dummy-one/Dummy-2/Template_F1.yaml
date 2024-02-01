@@ -6,11 +6,10 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: D25848-child/D25848-grandchild/Great-Grand child
+  path: D25848-child/D25848-grandchild2/Dummy-one/Dummy-2
 spec:
-- template: Great Child Template
-  scheduledStartDate: 2024-01-31T09:00:00+05:30
-  dueDate: 2024-01-31T10:00:00+05:30
+- template: F1
+  scheduledStartDate: 2024-02-01T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
