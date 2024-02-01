@@ -1,16 +1,372 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Thu Feb 01 12:06:13 IST 2024
+# Date created:         Thu Feb 01 12:14:07 IST 2024
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: /
 spec:
-  imports:
-  - Dashboard_Custom D1.yaml
-  - Dashboard_Deployments.yaml
-  - Pattern_P1.yaml
-  - Pattern_p2.yaml
-  - Template_Template -Base.yaml
-  - Trigger_Trigger One.yaml
-  - Variables.yaml
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.admin_password
+    value: !value "xlrelease_PasswordStringVariable_folder_admin_password_value"
+  - type: xlrelease.StringVariable
+    key: folder.admin_username
+    value: admin
+- pattern: P1
+  stages:
+  - stage: Stage one
+  - stage: stage two
+  - stage: Stage Three
+  autoComplete: true
+- pattern: p2
+  stages:
+  - stage: P2 Stage One
+  - stage: P2 Stage Two
+  - stage: P3 Stage Three
+- template: Template -Base
+  scheduledStartDate: 2024-01-31T09:00:00+05:30
+  dueDate: 2024-01-31T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT
+      type: xlrelease.Task
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template__Base_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
+- name: Custom D1
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by risk
+    type: live.ReleasesByRiskTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Getting started
+    type: xlrelease.AnnouncementTile
+    row: 2
+    col: 0
+  - name: Avg. release duration over time
+    type: xlrelease.AvgReleaseDurationByMonthTile
+    row: 2
+    col: 3
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 4
+    col: 0
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 4
+    col: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    row: 4
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Longest task type
+    type: xlrelease.LongestTaskTypeTile
+    row: 4
+    col: 3
+- name: Deployments
+  type: xlrelease.DeploymentsByStageDashboard
+  owner: admin
+  tiles:
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 0
+    content: Development
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 1
+    content: Test
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 2
+    content: Acceptance
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 3
+    content: Production
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  columns: 4
+  filters:
+  - type: xlrelease.FolderFilter
+    folder: ./
+  - type: xlrelease.DateFilter
+- name: Trigger One
+  type: time.Schedule
+  releaseTitle: "D-25848_${triggerTime}"
+  template: Template -Base
+  tags:
+  - Dummy Trigger tag
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "90"
+  enabled: false
+  triggerTime: 2024-01-31T11:43:15.043000

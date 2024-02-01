@@ -1,10 +1,20 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Thu Feb 01 12:06:13 IST 2024
+# Date created:         Thu Feb 01 12:14:07 IST 2024
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: D25848-child/D25848-grandchild
 spec:
-  imports:
-  - Template_Clean Up Template.yaml
+- template: Clean Up Template
+  scheduledStartDate: 2024-01-31T09:00:00+05:30
+  dueDate: 2024-01-31T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: admin
