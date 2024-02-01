@@ -1,0 +1,18 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      23.4.0-SNAPSHOT
+# Date created:         Thu Feb 01 17:30:26 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: D25848_1
+spec:
+- directory: child-1
+  children:
+  - directory: Grandchild-3
+- directory: child-2
+  children:
+  - directory: grandchild-1
+    children:
+    - directory: grandchild-2

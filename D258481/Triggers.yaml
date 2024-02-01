@@ -1,0 +1,25 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      23.4.0-SNAPSHOT
+# Date created:         Thu Feb 01 17:30:26 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: D25848_1
+spec:
+- name: Time Based
+  type: time.Schedule
+  releaseTitle: Tty me
+  template: T1
+  releaseFolder: ./
+  periodicity: 0 0 * * * *
+  triggerTime: 2024-02-01T17:00:00.211000
+- directory: child-1
+  children:
+  - directory: Grandchild-3
+- directory: child-2
+  children:
+  - directory: grandchild-1
+    children:
+    - directory: grandchild-2
