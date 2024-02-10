@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Fri Feb 09 17:25:40 IST 2024
+# Date created:         Sat Feb 10 13:54:15 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -10,13 +10,14 @@ metadata:
 spec:
 - template: TT1
   scheduledStartDate: 2024-02-10T09:00:00+05:30
-  dueDate: 2024-02-10T12:15:00+05:30
-  plannedDuration: 11700
+  dueDate: 2024-02-10T17:30:00+05:30
+  plannedDuration: 30600
   phases:
   - phase: New Phase
     tasks:
     - name: MT
       type: xlrelease.Task
+    color: '#3d6c9e'
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_TT1_scriptUserPassword"
   riskProfile: Default risk profile
