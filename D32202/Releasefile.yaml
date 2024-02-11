@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Sat Feb 10 13:54:15 IST 2024
+# Date created:         Sun Feb 11 09:58:27 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -17,7 +17,6 @@ spec:
     tasks:
     - name: MT
       type: xlrelease.Task
-    color: '#3d6c9e'
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_TT1_scriptUserPassword"
   riskProfile: Default risk profile
