@@ -8,8 +8,4 @@ kind: Templates
 metadata:
   home: folder 23.1
 spec:
-- pattern: P1
-  stages:
-  - stage: New Stage
-  - stage: New Stage 2
-  - stage: New Stage 3
+- directory: folder23.1.2
