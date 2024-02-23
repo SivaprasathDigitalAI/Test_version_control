@@ -1,10 +1,15 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-SNAPSHOT
-# Date created:         Fri Feb 23 15:33:03 IST 2024
+# Date created:         Fri Feb 23 15:50:15 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Permissions.yaml
+  - Workflow_AWS Lambda application setup with Digital.ai Deploy.yaml
+  - Workflow_Azure Application setup with Digital.ai Deploy to create Azure resource
+    groups.yaml
+  - Workflow_GCP Application setup with Digital.ai Deploy for virtual machine instance.yaml
+  - Workflow_Tomcat DataSource Setup on SSH Host with Digital.ai Deploy.yaml
+  - Workflow_Websphere JaasAlias setup with Digital.ai Deploy.yaml
