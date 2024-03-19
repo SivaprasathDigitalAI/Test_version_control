@@ -6,20 +6,19 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: S-106906
+  path: Child
+  home: S-106906/Child
 spec:
-- template: App_config
+- template: Child_Template_1
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
   phases:
-  - phase: Workflow tasks
+  - phase: New Phase
     tasks:
-    - name: MT1
+    - name: Mt_child
       type: xlrelease.Task
-  kind: WORKFLOW
-  categories:
-  - Application Life Cycle Management
-  disableNotifications: true
+  scriptUsername: "${folder.child_username}"
+  variableMapping:
+    scriptUserPassword: "${folder.child_password}"
+  riskProfile: Default risk profile
   author: admin
-  defaultTargetFolder: ./

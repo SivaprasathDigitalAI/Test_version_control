@@ -1,0 +1,19 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      24.1.0-319.113
+# Date created:         Tue Mar 19 19:06:48 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-106906
+spec:
+- name: Trigger-1
+  type: time.Schedule
+  releaseTitle: "Trigger-1_release-${triggerTime}"
+  template: Template-1
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "90"
+  enabled: false
