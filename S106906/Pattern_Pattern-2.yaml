@@ -4,12 +4,13 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: /
+  home: S-106906
 spec:
-  imports:
-  - Pattern_Pattern-1.yaml
-  - Pattern_Pattern-2.yaml
-  - Template_Template-1.yaml
-  - Template_Template-2.yaml
-  - Trigger_Trigger-1.yaml
-  - Variables.yaml
+- pattern: Pattern-2
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
+  - stage: New Stage (2)

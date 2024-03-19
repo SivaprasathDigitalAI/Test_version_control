@@ -6,26 +6,19 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: S-106906
+  path: Child
+  home: S-106906/Child
 spec:
-- template: Template-1
+- template: Child_Template_1
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: MT
+    - name: Mt_child
       type: xlrelease.Task
-    - name: Js
-      type: xlrelease.ScriptTask
-    - name: CRT
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: FFFFF
-      releaseTags:
-      - ddddd
-      template: ./Template-2
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_1_scriptUserPassword"
+  scriptUsername: "${folder.child_username}"
+  variableMapping:
+    scriptUserPassword: "${folder.child_password}"
   riskProfile: Default risk profile
   author: admin
