@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-319.113
-# Date created:         Tue Mar 19 19:17:34 IST 2024
+# Date created:         Tue Mar 19 19:18:15 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,13 +9,17 @@ metadata:
   path: /
   home: S-106906
 spec:
-- template: Template-2
+- template: App_config
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
   phases:
-  - phase: New Phase
+  - phase: Workflow tasks
     tasks:
-    - name: MT-1-2
+    - name: MT1
       type: xlrelease.Task
-  riskProfile: Default risk profile
+  kind: WORKFLOW
+  categories:
+  - Application Life Cycle Management
+  disableNotifications: true
   author: admin
+  defaultTargetFolder: ./
