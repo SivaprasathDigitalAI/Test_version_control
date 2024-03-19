@@ -2,10 +2,3 @@
 # Release version:      24.1.0-319.113
 # Date created:         Tue Mar 19 19:15:52 IST 2024
 
----
-apiVersion: xl-release/v1
-kind: Import
-spec:
-  imports:
-  - Template_Template-1.yaml
-  - Variables.yaml
