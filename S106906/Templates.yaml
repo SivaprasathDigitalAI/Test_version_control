@@ -1,0 +1,25 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      24.1.0-319.113
+# Date created:         Tue Mar 19 18:06:45 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-106906
+spec:
+- template: Template-1
+  scheduledStartDate: 2024-03-19T09:00:00+05:30
+  dueDate: 2024-03-19T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: MT
+      type: xlrelease.Task
+    - name: Js
+      type: xlrelease.ScriptTask
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_1_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
