@@ -2,10 +2,3 @@
 # Release version:      24.1.0-319.113
 # Date created:         Wed Mar 20 12:20:45 IST 2024
 
----
-apiVersion: xl-release/v1
-kind: Import
-spec:
-  imports:
-  - Dashboard_Child Release statistics.yaml
-  - Template_Child_Template_1.yaml

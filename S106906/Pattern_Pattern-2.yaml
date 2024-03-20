@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-319.113
-# Date created:         Wed Mar 20 12:14:20 IST 2024
+# Date created:         Wed Mar 20 12:20:45 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,14 +9,6 @@ metadata:
   path: /
   home: S-106906
 spec:
-- pattern: Pattern-1
-  stages:
-  - stage: Pattern-1-1
-  - stage: Pattern-1-2
-  - stage: Pattern-1-3
-  trackedItems:
-  - trackedItem: Track-1-1
-  - trackedItem: Track1-2
 - pattern: Pattern-2
   stages:
   - stage: New Stage

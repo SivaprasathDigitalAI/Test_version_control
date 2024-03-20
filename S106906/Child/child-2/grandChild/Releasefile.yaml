@@ -7,5 +7,4 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Dashboard_Child Release statistics.yaml
-  - Template_Child_Template_1.yaml
+  - Template_FDDDD.yaml

@@ -1,14 +1,16 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      24.1.0-319.113
-# Date created:         Wed Mar 20 12:14:20 IST 2024
+# Date created:         Wed Mar 20 12:20:45 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Patterns.yaml
-  - Templates.yaml
-  - Triggers.yaml
+  - Pattern_Pattern-1.yaml
+  - Pattern_Pattern-2.yaml
+  - Template_Template-1.yaml
+  - Template_Template-2.yaml
+  - Trigger_Trigger-1.yaml
   - Variables.yaml
-  - Workflows.yaml
+  - Workflow_App_config.yaml
