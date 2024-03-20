@@ -7,8 +7,4 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Patterns.yaml
   - Templates.yaml
-  - Triggers.yaml
-  - Variables.yaml
-  - Workflows.yaml

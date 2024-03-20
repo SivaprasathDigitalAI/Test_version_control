@@ -1,0 +1,24 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      24.1.0-319.113
+# Date created:         Wed Mar 20 12:14:20 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Child
+  home: S-106906/Child
+spec:
+- template: Child_Template_1
+  scheduledStartDate: 2024-03-19T09:00:00+05:30
+  dueDate: 2024-03-19T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: Mt_child
+      type: xlrelease.Task
+  scriptUsername: "${folder.child_username}"
+  variableMapping:
+    scriptUserPassword: "${folder.child_password}"
+  riskProfile: Default risk profile
+  author: admin
