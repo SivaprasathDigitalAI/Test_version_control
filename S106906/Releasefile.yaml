@@ -46,7 +46,6 @@ spec:
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_1_scriptUserPassword"
   riskProfile: Default risk profile
-  author: admin
 - template: Template-2
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
@@ -56,7 +55,6 @@ spec:
     - name: MT-1-2
       type: xlrelease.Task
   riskProfile: Default risk profile
-  author: admin
 - name: Trigger-1
   type: time.Schedule
   releaseTitle: "Trigger-1_release-${triggerTime}"
@@ -207,7 +205,6 @@ spec:
         - name: FFFFF
           type: xlrelease.Task
       riskProfile: Default risk profile
-      author: admin
   - directory: child-2
     children:
     - template: WDF!
@@ -232,4 +229,3 @@ spec:
             template: ./Child/Grandchild-2/FCSD
             folder: ./Child/child-2
         riskProfile: Default risk profile
-        author: admin
