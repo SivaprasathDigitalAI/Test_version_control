@@ -77,7 +77,6 @@ spec:
     variableMapping:
       scriptUserPassword: "${folder.child_password}"
     riskProfile: Default risk profile
-    author: admin
   - name: Child Release statistics
     type: xlrelease.ReleaseStatisticsDashboard
     owner: admin
@@ -193,7 +192,6 @@ spec:
         - name: FFFFFF
           type: xlrelease.Task
       riskProfile: Default risk profile
-      author: admin
   - directory: Grandchild-2
     children:
     - template: FCSD
