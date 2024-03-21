@@ -1,20 +1,19 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
-# Release version:      24.1.0-319.113
-# Date created:         Wed Mar 20 13:02:51 IST 2024
+# Release version:      23.1.0
+# Date created:         Thu Mar 21 17:36:34 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: S-106906
+  path: /
 spec:
 - folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.child_password
   - type: xlrelease.StringVariable
     key: folder.child_username
     value: admin
-  - type: xlrelease.PasswordStringVariable
-    key: folder.child_password
-    value: !value "xlrelease_PasswordStringVariable_folder_child_password_value"
 - pattern: Pattern-1
   stages:
   - stage: Pattern-1-1
@@ -28,6 +27,20 @@ spec:
   - stage: New Stage
   - stage: New Stage (1)
   - stage: New Stage (2)
+- template: App_config
+  scheduledStartDate: 2024-03-19T09:00:00+05:30
+  dueDate: 2024-03-19T10:00:00+05:30
+  phases:
+  - phase: Workflow tasks
+    tasks:
+    - name: MT1
+      type: xlrelease.Task
+  kind: WORKFLOW
+  categories:
+  - Application Life Cycle Management
+  disableNotifications: true
+  author: admin
+  defaultTargetFolder: ./
 - template: Template-1
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
@@ -38,14 +51,9 @@ spec:
       type: xlrelease.Task
     - name: Js
       type: xlrelease.ScriptTask
-    - name: CRT
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: FFFFF
-      releaseTags:
-      - ddddd
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_1_scriptUserPassword"
   riskProfile: Default risk profile
+  author: admin
 - template: Template-2
   scheduledStartDate: 2024-03-19T09:00:00+05:30
   dueDate: 2024-03-19T10:00:00+05:30
@@ -55,6 +63,7 @@ spec:
     - name: MT-1-2
       type: xlrelease.Task
   riskProfile: Default risk profile
+  author: admin
 - name: Trigger-1
   type: time.Schedule
   releaseTitle: "Trigger-1_release-${triggerTime}"
@@ -63,167 +72,3 @@ spec:
   pollType: REPEAT
   periodicity: "90"
   enabled: false
-- directory: Child
-  children:
-  - template: Child_Template_1
-    scheduledStartDate: 2024-03-19T09:00:00+05:30
-    dueDate: 2024-03-19T10:00:00+05:30
-    phases:
-    - phase: New Phase
-      tasks:
-      - name: Mt_child
-        type: xlrelease.Task
-    scriptUsername: "${folder.child_username}"
-    variableMapping:
-      scriptUserPassword: "${folder.child_password}"
-    riskProfile: Default risk profile
-  - name: Child Release statistics
-    type: xlrelease.ReleaseStatisticsDashboard
-    owner: admin
-    tiles:
-    - name: Longest task type
-      type: xlrelease.LongestTaskTypeTile
-      row: 0
-      col: 1
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Number of releases
-      type: xlrelease.ReleasesByMonthTile
-      row: 2
-      col: 3
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Release efficiency
-      type: xlrelease.ReleaseEfficiencyTile
-      row: 2
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Avg. task duration
-      type: xlrelease.AvgTaskDurationTile
-      row: 1
-      col: 1
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Time spent by task category
-      type: xlrelease.TaskTimeSpentTile
-      row: 0
-      col: 4
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Completed releases
-      type: xlrelease.CompletedReleasesTile
-      row: 0
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Avg. release duration
-      type: xlrelease.AvgReleaseDurationTile
-      row: 1
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Task efficiency
-      type: xlrelease.TaskEfficiencyTile
-      row: 0
-      col: 2
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Top 10 longest releases
-      type: xlrelease.LongestReleasesTile
-      row: 4
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Avg. release duration over time
-      type: xlrelease.AvgReleaseDurationByMonthTile
-      row: 4
-      col: 3
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Top 10 longest phases
-      type: xlrelease.LongestPhasesTile
-      row: 6
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    - name: Top 10 longest tasks
-      type: xlrelease.LongestTasksTile
-      row: 6
-      col: 3
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./Child
-      - type: xlrelease.DateFilter
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./Child
-    - type: xlrelease.DateFilter
-  - directory: Grandchild
-    children:
-    - template: GT
-      scheduledStartDate: 2024-03-20T09:00:00+05:30
-      dueDate: 2024-03-20T10:00:00+05:30
-      phases:
-      - phase: New Phase
-        tasks:
-        - name: FFFFFF
-          type: xlrelease.Task
-      riskProfile: Default risk profile
-  - directory: Grandchild-2
-    children:
-    - template: FCSD
-      scheduledStartDate: 2024-03-20T09:00:00+05:30
-      dueDate: 2024-03-20T10:00:00+05:30
-      phases:
-      - phase: New Phase
-        tasks:
-        - name: FFFFF
-          type: xlrelease.Task
-      riskProfile: Default risk profile
-  - directory: child-2
-    children:
-    - template: WDF!
-      scheduledStartDate: 2024-03-20T09:00:00+05:30
-      phases:
-      - phase: Workflow tasks
-        tasks:
-        - name: D
-          type: xlrelease.Task
-    - directory: grandChild
-      children:
-      - template: FDDDD
-        scheduledStartDate: 2024-03-20T09:00:00+05:30
-        dueDate: 2024-03-20T10:00:00+05:30
-        phases:
-        - phase: New Phase
-          tasks:
-          - name: FDCCVFDX
-            type: xlrelease.Task
-          - name: CRT
-            type: xlrelease.CreateReleaseTask
-            template: ./Child/Grandchild-2/FCSD
-            folder: ./Child/child-2
-        riskProfile: Default risk profile
