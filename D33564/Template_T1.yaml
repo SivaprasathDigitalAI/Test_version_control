@@ -6,16 +6,16 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: 564-1
-  home: D-33564/564-1
+  path: /
+  home: D-33564
 spec:
-- template: T3
+- template: T1
   scheduledStartDate: 2024-03-22T09:00:00+05:30
   dueDate: 2024-03-22T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: T33333
+    - name: ddd
       type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
