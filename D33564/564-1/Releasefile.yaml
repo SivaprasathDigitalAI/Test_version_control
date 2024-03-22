@@ -8,3 +8,4 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
+  - Template_T3.yaml
