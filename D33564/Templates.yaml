@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Fri Mar 22 17:09:50 IST 2024
+# Date created:         Fri Mar 22 17:47:36 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -13,9 +13,19 @@ spec:
   scheduledStartDate: 2024-03-22T09:00:00+05:30
   dueDate: 2024-03-22T10:00:00+05:30
   phases:
-  - phase: New Phase one-two
+  - phase: New Phase
     tasks:
-    - name: india
+    - name: ddd
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: admin
+- template: T2
+  scheduledStartDate: 2024-03-22T09:00:00+05:30
+  dueDate: 2024-03-22T10:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: XCX
       type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
