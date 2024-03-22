@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Fri Mar 22 13:30:42 IST 2024
+# Date created:         Fri Mar 22 13:33:46 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -64,6 +64,22 @@ spec:
       type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
+- name: "1"
+  type: time.Schedule
+  releaseTitle: w1
+  template: Template-1
+  pollType: REPEAT
+  periodicity: "123"
+  enabled: false
+  triggerTime: 2024-03-22T13:33:11.537000
+- name: "2"
+  type: time.Schedule
+  releaseTitle: 2wer
+  template: Template-2
+  pollType: REPEAT
+  periodicity: "145"
+  enabled: false
+  triggerTime: 2024-03-22T13:33:30.976000
 - directory: Child
   children:
   - template: Child_Template_1
