@@ -13,9 +13,9 @@ spec:
   scheduledStartDate: 2024-03-22T09:00:00+05:30
   dueDate: 2024-03-22T10:00:00+05:30
   phases:
-  - phase: New Phase
+  - phase: New Phase one-two
     tasks:
-    - name: ddd
+    - name: india
       type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
