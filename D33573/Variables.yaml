@@ -1,0 +1,30 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      23.1.0
+# Date created:         Mon Mar 25 16:48:26 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-33573
+spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.var1
+    valueProvider:
+      type: xlrelease.ListOfStringValueProviderConfiguration
+      values:
+      - "2"
+      - "3"
+      - "4"
+  - type: xlrelease.ListStringVariable
+    key: folder.Multi-select
+    label: mulyi
+    valueProvider:
+      type: xlrelease.ListOfStringValueProviderConfiguration
+      values:
+      - dfdff
+      - value-2
+      - value-3
+      - value -4

@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Mon Mar 25 16:44:45 IST 2024
+# Date created:         Mon Mar 25 16:48:26 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -24,4 +24,4 @@ spec:
   pollType: REPEAT
   periodicity: "145"
   enabled: false
-  triggerTime: 2024-03-25T16:39:08.264000
+  triggerTime: 2024-03-25T16:39:08.264Z
