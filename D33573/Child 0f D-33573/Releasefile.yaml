@@ -7,10 +7,6 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Dashboards.yaml
   - Notifications.yaml
-  - Patterns.yaml
   - Permissions.yaml
   - Templates.yaml
-  - Triggers.yaml
-  - Variables.yaml
