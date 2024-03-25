@@ -6,15 +6,15 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Child 0f D-33573
-  home: D-33573/Child 0f D-33573
+  path: Child 0f D-33573/GrandChild 0f D-33573
+  home: D-33573/Child 0f D-33573/GrandChild 0f D-33573
 spec:
-- template: ch-1
+- template: GC-T-1
   scheduledStartDate: 2024-03-25T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: MT-1
+    - name: Mt1
       type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin

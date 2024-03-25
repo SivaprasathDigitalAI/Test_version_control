@@ -6,11 +6,31 @@
 apiVersion: xl-release/v1
 kind: Permissions
 metadata:
-  path: /
-  home: D-33573
+  path: Child 0f D-33573/GrandChild 0f D-33573
+  home: D-33573/Child 0f D-33573/GrandChild 0f D-33573
 spec:
 - directory: "."
   teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - app_pipelines#view
+    - folder#view
+    - template#create_release
+    - template#create_release_other_folder
+    - template#edit
+    - template#edit_failure_handler
+    - template#edit_precondition
+    - template#edit_security
+    - template#edit_triggers
+    - template#lock_task
+    - template#view
+    - trigger#view_trigger
+  - name: Team Jeeva
+    permissions:
+    - dashboard#view
+    - folder#view
   - name: Folder Owner
     users:
     - admin
@@ -36,25 +56,6 @@ spec:
     - folder#view_versions
     - group#edit
     - group#view
-  - name: Team_siva
-    users:
-    - siva
-    - sivaji
-    permissions:
-    - delivery_pattern#view
-    - folder#view
-    - folder#view_versions
-    - release#edit
-    - release#edit_task
-    - release#view
-    - template#edit
-    - template#view
-  - name: Team Ija
-    users:
-    - ija
-    permissions:
-    - dashboard#view
-    - folder#view
   - name: Release Admin
     users:
     - admin
@@ -88,25 +89,20 @@ spec:
     - workflow#abort_execution
     - workflow#start_execution
     - workflow#view_execution
-  - name: Template Owner
-    users:
-    - admin
-    permissions:
-    - app_pipelines#view
-    - folder#view
-    - template#create_release
-    - template#create_release_other_folder
-    - template#edit
-    - template#edit_failure_handler
-    - template#edit_precondition
-    - template#edit_security
-    - template#edit_triggers
-    - template#lock_task
-    - template#view
-    - trigger#view_trigger
-  - name: Team Jeeva
-    users:
-    - jeeva
+  - name: Team Ija
     permissions:
     - dashboard#view
     - folder#view
+  - name: Team_siva
+    users:
+    - siva
+    - sivaji
+    permissions:
+    - delivery_pattern#view
+    - folder#view
+    - folder#view_versions
+    - release#edit
+    - release#edit_task
+    - release#view
+    - template#edit
+    - template#view
