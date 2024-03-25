@@ -1,11 +1,32 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Mon Mar 25 17:45:31 IST 2024
+# Date created:         Mon Mar 25 17:45:51 IST 2024
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  home: D-32202
 spec:
-  imports:
-  - Patterns.yaml
-  - Templates.yaml
+- pattern: Pattern-32202
+  plannedDuration: 2
+  stages:
+  - stage: Stage one-32202
+  - stage: Stage 2- 32202
+  - stage: Stage 3- 32202
+  trackedItems:
+  - trackedItem: Track 32202-One
+  - trackedItem: Tracked 32202-two
+- template: Test1
+  scheduledStartDate: 2024-02-14T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: Mt
+      type: xlrelease.Task
+    - name: Js1
+      type: xlrelease.ScriptTask
+    - name: MT
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: admin
