@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Mon Mar 25 17:05:23 IST 2024
+# Date created:         Mon Mar 25 17:13:05 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -11,26 +11,19 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: Template Owner
+  - name: Team_siva
     users:
-    - admin
+    - siva
+    - sivaji
     permissions:
-    - app_pipelines#view
+    - delivery_pattern#view
     - folder#view
-    - template#create_release
-    - template#create_release_other_folder
+    - folder#view_versions
+    - release#edit
+    - release#edit_task
+    - release#view
     - template#edit
-    - template#edit_failure_handler
-    - template#edit_precondition
-    - template#edit_security
-    - template#edit_triggers
-    - template#lock_task
     - template#view
-    - trigger#view_trigger
-  - name: Team Jeeva
-    permissions:
-    - dashboard#view
-    - folder#view
   - name: Folder Owner
     users:
     - admin
@@ -56,6 +49,22 @@ spec:
     - folder#view_versions
     - group#edit
     - group#view
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - app_pipelines#view
+    - folder#view
+    - template#create_release
+    - template#create_release_other_folder
+    - template#edit
+    - template#edit_failure_handler
+    - template#edit_precondition
+    - template#edit_security
+    - template#edit_triggers
+    - template#lock_task
+    - template#view
+    - trigger#view_trigger
   - name: Release Admin
     users:
     - admin
@@ -89,20 +98,3 @@ spec:
     - workflow#abort_execution
     - workflow#start_execution
     - workflow#view_execution
-  - name: Team Ija
-    permissions:
-    - dashboard#view
-    - folder#view
-  - name: Team_siva
-    users:
-    - siva
-    - sivaji
-    permissions:
-    - delivery_pattern#view
-    - folder#view
-    - folder#view_versions
-    - release#edit
-    - release#edit_task
-    - release#view
-    - template#edit
-    - template#view
