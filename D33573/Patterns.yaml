@@ -4,10 +4,13 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: /
+  home: D-33573
 spec:
-  imports:
-  - Notifications.yaml
-  - Patterns.yaml
-  - Templates.yaml
-  - Triggers.yaml
+- pattern: PatterOne
+  stages:
+  - stage: STage -on1
+  - stage: stage t2
+  - stage: Stage 3th
