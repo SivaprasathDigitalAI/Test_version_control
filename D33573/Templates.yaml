@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Mon Mar 25 16:35:59 IST 2024
+# Date created:         Mon Mar 25 16:38:18 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,7 +9,7 @@ metadata:
   path: /
   home: D-33573
 spec:
-- template: T1
+- template: T1-1
   scheduledStartDate: 2024-03-25T09:00:00+05:30
   dueDate: 2024-03-25T10:00:00+05:30
   phases:
@@ -26,6 +26,7 @@ spec:
   author: admin
 - template: T2
   scheduledStartDate: 2024-03-25T09:00:00+05:30
+  dueDate: 2024-03-25T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:

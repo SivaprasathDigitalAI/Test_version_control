@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-9C20LTLG:5516/
 # Release version:      23.1.0
-# Date created:         Mon Mar 25 16:35:59 IST 2024
+# Date created:         Mon Mar 25 16:38:18 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -12,15 +12,15 @@ spec:
 - name: T4
   type: time.Schedule
   releaseTitle: SFFEE
-  template: T1
+  template: T1-1
   pollType: REPEAT
   periodicity: "125"
   enabled: false
-  triggerTime: 2024-03-25T16:33:41.485000
+  triggerTime: 2024-03-25T16:33:41.485Z
 - name: T5
   type: time.Schedule
   releaseTitle: asswsws
   template: T2
   pollType: REPEAT
   periodicity: "145"
-  triggerTime: 2024-03-25T16:35:22.077000
+  triggerTime: 2024-03-25T16:36:42.884000
