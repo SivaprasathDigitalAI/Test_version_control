@@ -1,0 +1,71 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      23.1.0
+# Date created:         Mon Mar 25 16:44:20 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-33573
+spec:
+- name: Custom
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by risk
+    type: live.ReleasesByRiskTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Getting started
+    type: xlrelease.AnnouncementTile
+    row: 2
+    col: 0
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 0
+    col: 4
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 0
+    col: 5
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 1
+    col: 4
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 1
+    col: 5
+  - name: Deployment activity
+    type: deployment.DeploymentsActivityTile
+    row: 2
+    col: 3
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployment activity
+    type: deployment.DeploymentsActivityTile
+    row: 2
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Task efficiency
+    type: xlrelease.TaskEfficiencyTile
+    row: 4
+    col: 0
