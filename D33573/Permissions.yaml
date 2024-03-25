@@ -1,0 +1,112 @@
+# Exported from:        http://LAPTOP-9C20LTLG:5516/
+# Release version:      23.1.0
+# Date created:         Mon Mar 25 17:00:41 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: /
+  home: D-33573
+spec:
+- directory: "."
+  teams:
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - app_pipelines#edit
+    - app_pipelines#view
+    - dashboard#edit
+    - dashboard#view
+    - delivery#edit
+    - delivery#edit_tracked_item
+    - delivery#view
+    - delivery_pattern#edit
+    - delivery_pattern#view
+    - folder#apply_changes
+    - folder#edit
+    - folder#edit_configuration
+    - folder#edit_notifications
+    - folder#edit_security
+    - folder#edit_variables
+    - folder#edit_versions
+    - folder#generate_configuration
+    - folder#view
+    - folder#view_versions
+    - group#edit
+    - group#view
+  - name: Team Ija
+    users:
+    - ija
+    permissions:
+    - dashboard#view
+    - folder#view
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - app_pipelines#view
+    - folder#view
+    - template#create_release
+    - template#create_release_other_folder
+    - template#edit
+    - template#edit_failure_handler
+    - template#edit_precondition
+    - template#edit_security
+    - template#edit_triggers
+    - template#lock_task
+    - template#view
+    - trigger#view_trigger
+  - name: Team Jeeva
+    users:
+    - jeeva
+    permissions:
+    - dashboard#view
+    - folder#view
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - app_pipelines#view
+    - folder#view
+    - release#abort
+    - release#advance_task_transition
+    - release#edit
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - release#edit_precondition
+    - release#edit_security
+    - release#edit_task
+    - release#edit_task_attachments
+    - release#edit_task_configuration_facet
+    - release#edit_task_dates
+    - release#edit_task_description
+    - release#edit_task_flag
+    - release#edit_task_input_output_properties
+    - release#edit_task_script
+    - release#edit_task_tags
+    - release#lock_task
+    - release#reassign_task
+    - release#restart_phase
+    - release#start
+    - release#task_transition
+    - release#view
+    - trigger#edit_trigger
+    - trigger#view_trigger
+    - workflow#abort_execution
+    - workflow#start_execution
+    - workflow#view_execution
+  - name: Team_siva
+    users:
+    - siva
+    - sivaji
+    permissions:
+    - delivery_pattern#view
+    - folder#view
+    - folder#view_versions
+    - release#edit
+    - release#edit_task
+    - release#view
+    - template#edit
+    - template#view
